@@ -7,12 +7,6 @@ require("dotenv").config();
 app.use(bodyParser.json()); //stored in req.body
 const PORT = process.env.PORT || 3000;
 
-
-// Listen on port
-app.listen(3000, () => {
-  console.log("Server on 3000");
-});
-
 app.get("/", function (req, res) {
   res.send("Hello World");
 });
@@ -21,7 +15,11 @@ app.get("/", function (req, res) {
 const personRoutes = require("./Routes/PersonRoutes");
 const menunRoutes = require("./Routes/MenuRoutes");
 
-
 // use the routers
 app.use("/person", personRoutes);
 app.use("/menu", menunRoutes);
+
+// Listen on port
+app.listen(PORT, () => {
+  console.log("Server on 3000");
+});
