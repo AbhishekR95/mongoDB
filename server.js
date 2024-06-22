@@ -19,7 +19,7 @@ const menunRoutes = require("./Routes/MenuRoutes");
 app.use("/person", personRoutes);
 app.use("/menu", menunRoutes);
 
-// Listen on port
+// Listen on the port
 app.listen(PORT, () => {
   console.log("Server on 3000");
 });
