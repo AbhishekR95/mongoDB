@@ -9,11 +9,22 @@
   "author": "Abhishek R",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "body-parser": "^1.20.2",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "mongoose": "^8.4.3",
-    "nodemon": "^3.1.4"
+    "nodemon": "^3.1.4",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AbhishekR95/mongoDB.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AbhishekR95/mongoDB/issues"
+  },
+  "homepage": "https://github.com/AbhishekR95/mongoDB#readme",
   "description": ""
 }
