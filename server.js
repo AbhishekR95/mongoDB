@@ -31,7 +31,7 @@ const personRoutes = require("./Routes/PersonRoutes");
 const menunRoutes = require("./Routes/MenuRoutes");
 
 // use the routers
-app.use("/person", localAuthMiddleware, personRoutes);
+app.use("/person", personRoutes);
 app.use("/menu", menunRoutes);
 
 // Listen on the port

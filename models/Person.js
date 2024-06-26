@@ -43,19 +43,19 @@ const personSchema = new mongoose.Schema({
 personSchema.pre("save", async function (next) {
   const person = this;
 
-  // Hash only if password field is modified or craeted new
+  // Hash only if password field is modified or created new
   if (!person.isModified("password")) return next();
 
   try {
     // Hash password generations
     const salt = await bcrypt.genSalt(10);
-    next();
 
     // Hash password
     const hashedPassword = await bcrypt.hash(person.password, salt);
 
     //  override the original password with hashed one
     person.password = hashedPassword;
+    next();
   } catch (err) {
     return next(err);
   }
@@ -75,13 +75,3 @@ personSchema.methods.comparePassword = async function (candidatePassword) {
 const Person = mongoose.model("Person", personSchema);
 
 module.exports = Person;
-
-// {
-//     "name": "Alice",
-//     "age": 28,
-//     "work": "chef",
-//     "mobile": "123-456-789",
-//     "email": "alice@gmail.com",
-//     "address": "123 Main street, city",
-//     "salary": 6000
-// }
